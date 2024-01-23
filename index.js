@@ -13,6 +13,9 @@ const host = '0.0.0.0'
 
 const path = require('path')
 const layouts = require('express-ejs-layouts')
+const crypto = require('crypto')
+const sessionSecret = crypto.randomBytes(64).toString('hex');
+console.log(sessionSecret);
 
 // Session store
 const sessionStore = new SequelizeStore({
@@ -37,7 +40,7 @@ app.use(express.static(__dirname + '/public'))
 // Sessions
 app.use(
     session({
-        secret: process.env.SESSION_SECRET,
+        secret: sessionSecret,
         resave: false,
         saveUninitialized: false,
         store: sessionStore,
