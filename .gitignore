@@ -132,3 +132,4 @@ dist
 # Mac things
 .DS_Store
 .prettierrc
+.editorconfig
