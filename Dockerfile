@@ -1,4 +1,4 @@
-FROM node:19
+FROM node:20.9.0-bullseye-slim
 WORKDIR /usr/src/app
 
 EXPOSE 3000

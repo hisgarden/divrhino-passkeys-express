@@ -14,7 +14,7 @@ services:
             - db
         command: npx nodemon index.js
     db:
-        image: postgres:alpine
+        image: cgr.dev/chainguard/postgres:latest-dev
         environment:
             - POSTGRES_USER=${PGUSER}
             - POSTGRES_PASSWORD=${PGPASSWORD}
